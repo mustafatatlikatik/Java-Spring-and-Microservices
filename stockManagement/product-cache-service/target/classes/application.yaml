@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: product-cache-service
+  profiles:
+    active: localhost
+
+  main:
+    allow-bean-definition-overriding: true
+info:
+  component: Product Cache Service
+#logging:
+ # level:
+ #   root:
+  #  com.mustafatatlikatik: DEBUG
+server:
+  port: 9791
+
+---
+spring:
+  config:
+    activate:
+      on-profile: localhost
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+
+feign:
+  product-service:
+    name: product-service
+    url: http://localhost:8762
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    preffered-ip-address: true
+    lease-renewal-interval-in-seconds: 10
+---
+spring:
+  config:
+    activate:
+      on-profile: stage
+  cache:
+    type: redis
+  redis:
+    host: redis
+    port: 6379
+
+feign:
+  product-service:
+    name: product-service
+    url: http://zuul-edge-server:8762
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}:${random.uuid}
+    preffered-ip-address: true
+    lease-renewal-interval-in-seconds: 10

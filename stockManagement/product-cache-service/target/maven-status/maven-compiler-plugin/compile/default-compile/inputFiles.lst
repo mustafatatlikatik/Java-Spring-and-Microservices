@@ -1,0 +1,11 @@
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\response\ProductResponse.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\enums\Language.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\service\ProductRepositoryService.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\repository\ProductRepository.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\controller\ProductCacheController.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\ProductCacheServiceApplication.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\repository\entity\Product.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\service\impl\ProductRepositoryServiceImpl.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\response\InternalApiResponse.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\response\FriendlyMessage.java
+C:\Users\musta\JavaSpring\stockManagement\product-cache-service\src\main\java\com\mustafatatlikatik\stockmanagement\productcacheservice\feign\product\ProductServiceFeignClient.java
