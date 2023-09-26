@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  redis:
+    container_name: redis
+    hostname: redis
+    image: redis
+    volumes:
+      - "../data/redis:/var/lib/redis/data"
+    networks:
+      - stock-management-network-backend
+    expose: 
+      - 6379
+    ports:
+      - 6379:6379
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 20s
+        max_attempts: 3
+        window: 120s
+      resources:
+        reservations:
+          cpus: "0.50"
+          memory: 512M
+        limits:
+          memory: 1G
+          cpus: "1.0"
+
+networks:
+  stock-management-network-backend:

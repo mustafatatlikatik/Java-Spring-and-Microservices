@@ -1,0 +1,36 @@
+version: '3.3'
+
+services:
+  postgres:
+    container_name: postgres
+    hostname: postgres
+    image: postgres:13.6-alpine
+    volumes:
+      - /Kullanıcılar/musta/data/postgresql:/var/lib/postgresql/data
+    networks:
+      - stock-management-network-backend
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 20s
+        max_attempts: 3
+        window: 120s
+      resources:
+        reservations:
+          cpus: "0.50"
+          memory: 512M
+        limits:
+          cpus: "1.0"
+          memory: 1G
+    environment:
+      POSTGRES_DB: stock_management
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+
+networks:
+  stock-management-network-backend:
