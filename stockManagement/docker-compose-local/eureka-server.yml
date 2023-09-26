@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+  eureka-server:
+    #container_name: eureka-server
+    hostname: eureka-server
+    image: eureka-server:0.0.2
+    networks:
+      - stock-management-network-backend
+    expose:
+      - 8761
+    ports:
+      - 8761:8761
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      resources:
+        reservations:
+          cpus: "0.50"
+          memory: 512M
+        limits:
+          cpus: "1.0"
+          memory: 1G
+    environment:
+      - "SPRING_PROFILES_ACTIVE=stage"
+    entrypoint: [ "java","-jar","app.jar" ]
+
+networks:
+  stock-management-network-backend:
