@@ -27,7 +27,7 @@ class ProductController {
     private final IProductRepositoryService productRepositoryService;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @Operation(summary ="This endpoint creates product.")
+    @Operation(summary ="This endpoint creates product.", description = "Create product")
     @PostMapping(value = "/{language}/create")
     public InternalApiResponse<ProductResponse> createProduct(@PathVariable("language") Language language,
                                                               @RequestBody ProductCreateRequest productCreateRequest) {
