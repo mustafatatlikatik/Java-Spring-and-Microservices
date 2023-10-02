@@ -27,6 +27,7 @@ class ProductController {
     private final IProductRepositoryService productRepositoryService;
 
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(summary ="This endpoint creates product.")
     @PostMapping(value = "/{language}/create")
     public InternalApiResponse<ProductResponse> createProduct(@PathVariable("language") Language language,
                                                               @RequestBody ProductCreateRequest productCreateRequest) {
@@ -47,6 +48,7 @@ class ProductController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @Operation(summary ="This endpoint gets selected product.", description = "Product must exists.")
     @GetMapping(value = "/{language}/get/{productId}")
     public InternalApiResponse<ProductResponse> getProduct(@PathVariable("language") Language language,
                                                            @PathVariable("productId") Long productId) {
@@ -63,6 +65,7 @@ class ProductController {
 
 
     @ResponseStatus(HttpStatus.OK)
+    @Operation(summary ="This endpoint updates selected product.", description = "Product must exists.")
     @PutMapping(value = "/{language}/update/{productId}")
     public InternalApiResponse<ProductResponse> updateProduct(@PathVariable("language") Language language,
                                                               @PathVariable("productId") Long productId,
@@ -82,7 +85,7 @@ class ProductController {
                 .build();
     }
 
-    @Operation(summary ="This endpoint get all product.", description = "Products must created.")
+    @Operation(summary ="This endpoint get all product.", description = "Products must exists.")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/{language}/products")
     public InternalApiResponse<List<ProductResponse>> getProducts(@PathVariable("language") Language language) {
@@ -98,6 +101,7 @@ class ProductController {
     }
 
     @ResponseStatus(HttpStatus.OK)
+    @Operation(summary ="This endpoint deletes selected product.", description = "Product must exists.")
     @DeleteMapping(value = "/{language}/delete/{productId}")
     public InternalApiResponse<ProductResponse> deleteProduct(@PathVariable("language") Language language,
                                                               @PathVariable("productId") Long productId) {
