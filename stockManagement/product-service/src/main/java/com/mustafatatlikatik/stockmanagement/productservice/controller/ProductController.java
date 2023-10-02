@@ -82,7 +82,7 @@ class ProductController {
                 .build();
     }
 
-    @Operation(description ="This endpoint get all product.")
+    @Operation(summary ="This endpoint get all product.", description = "Products must created.")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping(value = "/{language}/products")
     public InternalApiResponse<List<ProductResponse>> getProducts(@PathVariable("language") Language language) {
