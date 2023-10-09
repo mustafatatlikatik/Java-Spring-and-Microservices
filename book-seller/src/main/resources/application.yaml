@@ -16,3 +16,5 @@ app:
   jwt:
     secret: RandomSecretKey
     expiration-in-ms: 86400000
+authentication:
+  internal-api-key: InternalApiKey1234!

@@ -6,7 +6,7 @@ services:
     hostname: postgres
     image: postgres:13.6-alpine
     volumes:
-      - /Kullanıcılar/musta/data/postgresql:/var/lib/postgresql/data
+      - C:\data/postgresql:/var/lib/postgresql/data
     networks:
       - stock-management-network-backend
     expose:

@@ -6,7 +6,7 @@ services:
     hostname: redis
     image: redis
     volumes:
-      - "../data/redis:/var/lib/redis/data"
+      - C:\data/redis:/var/lib/redis/data
     networks:
       - stock-management-network-backend
     expose: 

@@ -17,7 +17,7 @@ public class Book {
     @Column(name = "description",nullable = false,length = 100)
     private String description;
     @Column(name = "author",nullable = false,length = 100)
-    private String autor;
+    private String author;
     @Column(name = "price",nullable = false)
     private Double price;
     @Column(name = "create_time",nullable = false)
